@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carriage Cleaners of Novi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bottle:#1E3A2C; --bottle-deep:#142A1F; --linen:#FAFAF6; --brass:#AE8A52;
+  --charcoal:#2B2B29; --sage:#DDE4DB; --muted:#5E6A62;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--linen);color:var(--charcoal);font-family:Jost,system-ui,sans-serif;font-weight:300;font-size:1.0625rem;line-height:1.6;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+
+/* nav */
+header.top{display:flex;justify-content:space-between;align-items:center;padding:26px 0}
+.mark{font-family:"Bodoni Moda",serif;font-size:1.35rem;font-weight:500;letter-spacing:.01em;text-decoration:none}
+.mark small{display:block;font-family:Jost;font-size:.78rem;font-weight:400;color:var(--muted);letter-spacing:.04em}
+.call{font-weight:500;text-decoration:none;border-bottom:1px solid var(--brass);padding-bottom:2px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;padding:56px 0 96px}
+.hero h1{font-family:"Bodoni Moda",serif;font-weight:400;font-size:clamp(2.6rem,5.6vw,4.9rem);line-height:1.02;letter-spacing:-.015em;color:var(--bottle-deep)}
+.hero p.lede{margin-top:28px;max-width:34ch;font-size:1.2rem;color:var(--muted)}
+.actions{margin-top:40px;display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.btn{display:inline-block;background:var(--bottle);color:var(--linen);text-decoration:none;padding:16px 30px;font-weight:500;letter-spacing:.02em;border-radius:2px}
+.btn:hover{background:var(--bottle-deep)}
+.btn.ghost{background:transparent;color:var(--bottle);border:1px solid var(--bottle)}
+
+/* the tag */
+.tagstage{position:relative;height:520px;display:flex;justify-content:center}
+.string{position:absolute;top:0;left:50%;width:1px;height:96px;background:var(--brass);transform-origin:top}
+.tag{position:absolute;top:84px;width:300px;background:var(--bottle);color:var(--linen);padding:70px 34px 36px;
+  clip-path:polygon(18% 0,82% 0,100% 12%,100% 100%,0 100%,0 12%);transform:rotate(-4deg);transform-origin:50% 0;
+  animation:sway 6s ease-in-out 1 both}
+.tag::before{content:"";position:absolute;top:24px;left:50%;width:22px;height:22px;margin-left:-11px;border-radius:50%;background:var(--linen);box-shadow:inset 0 0 0 3px var(--brass)}
+.tag .no{font-family:"Bodoni Moda",serif;font-size:3.4rem;line-height:1;color:var(--brass)}
+.tag .lbl{font-size:.86rem;color:#BFCBC2;margin-top:6px}
+.tag dl{margin-top:28px;border-top:1px dashed rgba(250,250,246,.35);padding-top:20px;display:grid;grid-template-columns:auto 1fr;gap:8px 18px;font-size:.98rem}
+.tag dt{color:#BFCBC2}
+.tag dd{text-align:right}
+.tag .perf{margin-top:26px;border-top:1px dashed rgba(250,250,246,.35);padding-top:16px;font-family:"Bodoni Moda",serif;font-style:italic;font-size:1.05rem;color:var(--sage)}
+@keyframes sway{0%{transform:rotate(6deg)}35%{transform:rotate(-7deg)}65%{transform:rotate(-2deg)}100%{transform:rotate(-4deg)}}
+@media (prefers-reduced-motion:reduce){.tag{animation:none}}
+
+/* care section */
+.care{background:var(--bottle-deep);color:var(--linen);padding:110px 0}
+.care .grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px}
+.care h2{font-family:"Bodoni Moda",serif;font-weight:400;font-size:clamp(2rem,3.6vw,3rem);line-height:1.1}
+.care h2 + p{margin-top:20px;color:#BFCBC2;max-width:34ch}
+.care ul{list-style:none}
+.care li{display:grid;grid-template-columns:1fr auto;gap:20px;padding:22px 0;border-bottom:1px solid rgba(221,228,219,.18);align-items:baseline}
+.care li:first-child{border-top:1px solid rgba(221,228,219,.18)}
+.care li strong{font-family:"Bodoni Moda",serif;font-weight:400;font-size:1.45rem}
+.care li span{color:#BFCBC2;font-size:.95rem;text-align:right}
+
+/* testimony */
+.voices{padding:120px 0}
+.voices .feature{max-width:900px}
+.voices blockquote.big{font-family:"Bodoni Moda",serif;font-size:clamp(1.9rem,4vw,3.3rem);line-height:1.15;color:var(--bottle-deep)}
+.voices .big + cite{display:block;margin-top:22px;font-style:normal;color:var(--muted)}
+.slips{margin-top:80px;display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.slip{background:#fff;border:1px solid var(--sage);padding:30px 28px 26px;position:relative}
+.slip::after{content:"";position:absolute;left:0;right:0;top:-1px;height:6px;background:radial-gradient(circle at 8px -2px,var(--linen) 5px,transparent 6px) 0 0/16px 6px repeat-x}
+.slip p{font-size:1.04rem}
+.slip cite{display:block;margin-top:18px;font-style:normal;font-size:.9rem;color:var(--muted)}
+
+/* visit */
+.visit{background:var(--sage);padding:100px 0}
+.visit .grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.visit h2{font-family:"Bodoni Moda",serif;font-weight:400;font-size:clamp(2rem,3.6vw,3rem);line-height:1.1;color:var(--bottle-deep)}
+.visit address{font-style:normal;margin-top:22px;font-size:1.15rem}
+.hours{width:100%;border-collapse:collapse;font-size:1.05rem}
+.hours td{padding:14px 0;border-bottom:1px solid rgba(30,58,44,.18)}
+.hours td:last-child{text-align:right;font-weight:400}
+.visit .actions{margin-top:30px}
+
+footer{padding:40px 0 48px;font-size:.82rem;color:var(--muted);text-align:center}
+
+@media (max-width:880px){
+  .hero{grid-template-columns:1fr;padding:24px 0 60px;gap:20px}
+  .tagstage{height:470px}
+  .care .grid,.visit .grid{grid-template-columns:1fr;gap:36px}
+  .slips{grid-template-columns:1fr}
+  .care,.voices,.visit{padding:76px 0}
+}
+@media (max-width:480px){
+  .wrap{padding:0 20px}
+  .mark small{display:none}
+  .tag{width:270px;padding:66px 26px 30px}
+  .care li{grid-template-columns:1fr}
+  .care li span{text-align:left}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="#">Carriage Cleaners<small>of Novi</small></a>
+    <a class="call" href="tel:+12483484510">(248) 348-4510</a>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>Your best clothes, handled with care on Ten Mile.</h1>
+      <p class="lede">Dry cleaning and laundry in Novi, with same-day service, careful stain work, and a counter that knows its regulars.</p>
+      <div class="actions">
+        <a class="btn" href="tel:+12483484510">Call the shop</a>
+        <a class="btn ghost" href="#visit">Hours &amp; directions</a>
+      </div>
+    </div>
+    <div class="tagstage" aria-hidden="true">
+      <div class="string"></div>
+      <div class="tag">
+        <div class="no">5.0</div>
+        <div class="lbl">Google rating from 45 reviews</div>
+        <dl>
+          <dt>Drop off</dt><dd>Mon–Sat</dd>
+          <dt>Weekdays</dt><dd>7 am – 6 pm</dd>
+          <dt>Saturday</dt><dd>9 am – 4 pm</dd>
+          <dt>Ready</dt><dd>Same day</dd>
+        </dl>
+        <div class="perf">43460 W 10 Mile Rd</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<section class="care">
+  <div class="wrap grid">
+    <div>
+      <h2>What we take in</h2>
+      <p>Bring it to the counter and tell us what it needs. If it's urgent, ask about same-day service.</p>
+    </div>
+    <ul>
+      <li><strong>Dry cleaning</strong><span>Suits, dresses, coats</span></li>
+      <li><strong>Laundry</strong><span>Wash, dry and fold</span></li>
+      <li><strong>Special fabrics</strong><span>Delicate and specialty care</span></li>
+      <li><strong>Stain removal</strong><span>Point it out at drop-off</span></li>
+      <li><strong>Same-day service</strong><span>Ask about cutoff times</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="voices">
+  <div class="wrap">
+    <div class="feature">
+      <blockquote class="big">“The best cleaners in Novi. A 30 year customer with complete satisfaction.”</blockquote>
+      <cite>Google review, May 2026</cite>
+    </div>
+    <div class="slips">
+      <figure class="slip">
+        <p>“Another dry cleaner dropped the ball and I needed a suit dry cleaned in 24 hours. They took the challenge and did great work!”</p>
+        <cite>Google review, June 2026</cite>
+      </figure>
+      <figure class="slip">
+        <p>“First time utilizing Carriage Cleaners. I will definitely be back. Friendly, prompt, and great service.”</p>
+        <cite>Google review, September 2026</cite>
+      </figure>
+      <figure class="slip">
+        <p>“I have been using Carriage Cleaners in Novi for 13 years. The owner and staff are friendly.”</p>
+        <cite>Yuko, via Yelp</cite>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap grid">
+    <div>
+      <h2>Find the counter</h2>
+      <address>43460 W 10 Mile Rd<br>Novi, MI 48375</address>
+      <div class="actions">
+        <a class="btn" href="tel:+12483484510">Call (248) 348-4510</a>
+        <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Carriage%20Cleaners%20of%20Novi%2043460%20W%2010%20Mile%20Rd%20Novi%20MI" target="_blank" rel="noopener">Get directions</a>
+      </div>
+    </div>
+    <table class="hours" aria-label="Opening hours">
+      <tr><td>Monday – Friday</td><td>7:00 am – 6:00 pm</td></tr>
+      <tr><td>Saturday</td><td>9:00 am – 4:00 pm</td></tr>
+      <tr><td>Sunday</td><td>Closed</td></tr>
+    </table>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Sample design prepared for Carriage Cleaners of Novi — not affiliated with or endorsed by the business.</div>
+</footer>
+</body>
+</html>
